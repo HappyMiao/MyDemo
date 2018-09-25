@@ -1,4 +1,6 @@
 <resources>
     <string name="app_name">MyDemo</string>
     <string name="coordinator_demo">二阶贝塞尔曲线实现添加购物车动画</string>
+    <string name="http_demo">OKHttp封装</string>
+    <string name="http_demo_start">开始模拟请求</string>
 </resources>
