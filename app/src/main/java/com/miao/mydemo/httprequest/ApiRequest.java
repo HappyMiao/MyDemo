@@ -4,6 +4,7 @@ package com.miao.mydemo.httprequest;
 import okhttp3.OkHttpClient;
 import okhttp3.logging.HttpLoggingInterceptor;
 import retrofit2.Retrofit;
+import retrofit2.converter.gson.GsonConverterFactory;
 
 /**
  * @description: 创建Retrofit实例，提供创建接口Service的窗口
@@ -39,6 +40,7 @@ public class ApiRequest {
         retrofit = new Retrofit.Builder()
                 .baseUrl(REQUEST_HOST)
                 .client(okHttpClient)
+                .addConverterFactory(GsonConverterFactory.create())
                 .build();
     }
 

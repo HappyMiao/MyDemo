@@ -1,5 +1,7 @@
 package com.miao.mydemo.httprequest;
 
+import com.miao.mydemo.httprequest.model.Test1;
+
 import okhttp3.ResponseBody;
 import retrofit2.Call;
 import retrofit2.http.GET;
@@ -15,7 +17,7 @@ public class ApiService {
     //无参数示例
     public interface HttpTestService {
         @GET("banner/json")
-        Call<ResponseBody> getJSON();
+        Call<Test1> getJSON();
     }
 
     //有参数示例
