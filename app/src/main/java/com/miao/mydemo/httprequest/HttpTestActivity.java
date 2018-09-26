@@ -14,7 +14,9 @@ import com.miao.mydemo.httprequest.api.ApiTest1;
 import com.miao.mydemo.httprequest.model.Test1;
 
 /**
- * @description: 网络请求框架封装探索 基本请求、数据ResponseBody转换、拦截打印请求内容、添加头部信息
+ * @description: 网络请求框架封装探索 基本请求、
+ *               数据ResponseBody转换、拦截打印请求内容、
+ *               添加头部信息、cookie持久化存储自动登录验证
  * @author: miao
  * @time: 2018-09-25
  */

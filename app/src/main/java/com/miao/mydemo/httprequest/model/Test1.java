@@ -2,27 +2,11 @@ package com.miao.mydemo.httprequest.model;
 
 import java.util.List;
 
-public class Test1 {
+public class Test1 extends BaseResponse{
 
-    private int errorCode; //0为请求成功
-    private String errorMsg;
+    private static final long serialVersionUID = 8972773843439977733L;
+
     private List<DataBean> data;
-
-    public int getErrorCode() {
-        return errorCode;
-    }
-
-    public void setErrorCode(int errorCode) {
-        this.errorCode = errorCode;
-    }
-
-    public String getErrorMsg() {
-        return errorMsg;
-    }
-
-    public void setErrorMsg(String errorMsg) {
-        this.errorMsg = errorMsg;
-    }
 
     public List<DataBean> getData() {
         return data;

@@ -1,5 +1,9 @@
 package com.miao.mydemo.httprequest;
 
+import android.text.TextUtils;
+
+import com.miao.mydemo.httprequest.model.BaseResponse;
+
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -19,11 +23,28 @@ public class ApiCallBack<T> implements Callback<T>{
 
     @Override
     public void onResponse(Call<T> call, Response<T> response) {
-        requestCallBack.onSuccess(response.body());
+        if(requestCallBack == null){
+            return;
+        }
+        //通过返回的code，判断请求数据是否正常
+        if(response.body() != null){
+            if(!TextUtils.isEmpty(((BaseResponse)response.body()).getErrorCode()+"") &&
+                    ((BaseResponse)response.body()).getErrorCode() == 0){
+                requestCallBack.onSuccess(response.body());
+            }
+            if(!TextUtils.isEmpty(((BaseResponse)response.body()).getErrorCode()+"") &&
+                    ((BaseResponse)response.body()).getErrorCode() != 0){
+                requestCallBack.onError(((BaseResponse)response.body()).getErrorMsg());
+            }
+        }else {
+            requestCallBack.onFailure();
+        }
     }
 
     @Override
     public void onFailure(Call<T> call, Throwable t) {
-        requestCallBack.onFailure();
+        if(requestCallBack != null){
+            requestCallBack.onFailure();
+        }
     }
 }

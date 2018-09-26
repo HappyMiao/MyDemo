@@ -36,6 +36,7 @@ public class ApiRequest {
         logInterceptor.setLevel(HttpLoggingInterceptor.Level.BODY);
         OkHttpClient okHttpClient = new OkHttpClient.Builder()
                 .addNetworkInterceptor(logInterceptor)
+                .addInterceptor(new RequestInterceptor())
                 .build();
         retrofit = new Retrofit.Builder()
                 .baseUrl(REQUEST_HOST)
