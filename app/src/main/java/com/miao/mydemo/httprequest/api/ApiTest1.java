@@ -1,7 +1,5 @@
 package com.miao.mydemo.httprequest.api;
 
-import android.widget.Toast;
-
 import com.miao.mydemo.httprequest.ApiCallBack;
 import com.miao.mydemo.httprequest.ApiRequest;
 import com.miao.mydemo.httprequest.ApiService;

@@ -14,9 +14,18 @@ import com.miao.mydemo.httprequest.api.ApiTest1;
 import com.miao.mydemo.httprequest.model.Test1;
 
 /**
- * @description: 网络请求框架封装探索 基本请求、
- *               数据ResponseBody转换、拦截打印请求内容、
- *               添加头部信息、cookie持久化存储自动登录验证
+ * 网络请求框架封装探索
+ * 1、基本请求。
+ * 2、数据ResponseBody转换为需要的实体。
+ * 3、拦截打印请求内容、添加头部信息，如需要cookie持久化存储自动登录验证的接口。
+ * 框架说明
+ * 1、ApiRequest 创建Retrofit实例，为基本请求打下基础。
+ * 2、ApiService 定义基本的接口，各种类型的接口
+ * 3、RequestCallBack 数据回调的接口，用于将数据回调给发起请求的地方。
+ * 4、ApiCallBack 实现 Callback<T>接口，这里面处理返回的数据。RequestCallBack接口在这里面回调。
+ * 5、RequestInterceptor 请求拦截器，拦截请求，添加Header，用于免登陆等类型操作。
+ * 6、api-ApiTest1 具体的请求封装，界面层调用他发起请求
+ * 7、model--请求返回的数据实体。
  * @author: miao
  * @time: 2018-09-25
  */
