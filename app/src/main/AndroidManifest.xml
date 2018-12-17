@@ -27,6 +27,9 @@
         <!--Notification Demo界面-->
         <activity android:name=".notification.NotificationTestActivity"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar"/>
+        <!--KotlinDemoActivity Demo界面-->
+        <activity android:name=".kotlin.KotlinDemoActivity"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar"/>
     </application>
 
 </manifest>

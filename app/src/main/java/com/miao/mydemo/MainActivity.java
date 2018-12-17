@@ -8,6 +8,7 @@ import android.widget.Button;
 
 import com.miao.mydemo.coordinatorlayout.CoordinatorLayoutDemoActivity;
 import com.miao.mydemo.httprequest.HttpTestActivity;
+import com.miao.mydemo.kotlin.KotlinDemoActivity;
 import com.miao.mydemo.notification.NotificationTestActivity;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener{
@@ -19,9 +20,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         Button btn1 = findViewById(R.id.button1);
         Button btn2 = findViewById(R.id.button2);
         Button btn3 = findViewById(R.id.button3);
+        Button btn4 = findViewById(R.id.button4);
         btn1.setOnClickListener(this);
         btn2.setOnClickListener(this);
         btn3.setOnClickListener(this);
+        btn4.setOnClickListener(this);
     }
 
     @Override
@@ -35,6 +38,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
             case R.id.button3:
                 startActivity(new Intent(this, NotificationTestActivity.class));
+                break;
+            case R.id.button4:
+                startActivity(new Intent(this, KotlinDemoActivity.class));
                 break;
         }
     }
