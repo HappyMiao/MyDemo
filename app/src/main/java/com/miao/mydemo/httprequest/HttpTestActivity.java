@@ -65,14 +65,10 @@ public class HttpTestActivity extends AppCompatActivity implements View.OnClickL
                     }
 
                     @Override
-                    public void onError(String err_msg) {
-
-                    }
+                    public void onError(String err_msg) {}
 
                     @Override
-                    public void onFailure() {
-
-                    }
+                    public void onFailure() { }
                 });
                 break;
         }
