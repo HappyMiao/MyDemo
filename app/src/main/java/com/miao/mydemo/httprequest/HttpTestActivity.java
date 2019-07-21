@@ -12,6 +12,10 @@ import com.bumptech.glide.Glide;
 import com.miao.mydemo.R;
 import com.miao.mydemo.httprequest.api.ApiTest1;
 import com.miao.mydemo.httprequest.model.Test1;
+import com.miao.mydemo.rxjavaretrofit.ApiTest;
+
+import io.reactivex.Observer;
+import io.reactivex.disposables.Disposable;
 
 /**
  * 网络请求框架封装探索
@@ -49,28 +53,57 @@ public class HttpTestActivity extends AppCompatActivity implements View.OnClickL
     public void onClick(View v) {
         switch (v.getId()){
             case R.id.button1:
-                ApiTest1 apiTest1 = new ApiTest1();
-                apiTest1.getResponse(new RequestCallBack<Test1>() {
+//                ApiTest1 apiTest1 = new ApiTest1();
+//                apiTest1.getResponse(new RequestCallBack<Test1>() {
+//
+//                    @Override
+//                    public void onSuccess(Test1 response) {
+//                        if(!TextUtils.isEmpty(response.getData().get(0).getImagePath())){
+//                            Glide.with(HttpTestActivity.this)
+//                                    .load(response.getData().get(0).getImagePath())
+//                                    .into(imageView);
+//                        }
+//                        if(!TextUtils.isEmpty(response.getData().get(0).getTitle())){
+//                            textView.setText(response.getData().get(0).getTitle());
+//                        }
+//                    }
+//
+//                    @Override
+//                    public void onError(String err_msg) {}
+//
+//                    @Override
+//                    public void onFailure() { }
+//                });
+//                break;
+                ApiTest apiTest = new ApiTest();
+                apiTest.getResponse().subscribe(new Observer<Test1>() {
+                    @Override
+                    public void onSubscribe(Disposable d) {
+
+                    }
 
                     @Override
-                    public void onSuccess(Test1 response) {
-                        if(!TextUtils.isEmpty(response.getData().get(0).getImagePath())){
+                    public void onNext(Test1 test1) {
+                        if(!TextUtils.isEmpty(test1.getData().get(0).getImagePath())){
                             Glide.with(HttpTestActivity.this)
-                                    .load(response.getData().get(0).getImagePath())
+                                    .load(test1.getData().get(0).getImagePath())
                                     .into(imageView);
                         }
-                        if(!TextUtils.isEmpty(response.getData().get(0).getTitle())){
-                            textView.setText(response.getData().get(0).getTitle());
+                        if(!TextUtils.isEmpty(test1.getData().get(0).getTitle())){
+                            textView.setText(test1.getData().get(0).getTitle()+"-- rxjava");
                         }
                     }
 
                     @Override
-                    public void onError(String err_msg) {}
+                    public void onError(Throwable e) {
+
+                    }
 
                     @Override
-                    public void onFailure() { }
+                    public void onComplete() {
+
+                    }
                 });
-                break;
         }
     }
 }
