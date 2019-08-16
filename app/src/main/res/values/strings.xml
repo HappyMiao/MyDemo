@@ -1,9 +1,17 @@
 <resources>
     <string name="app_name">MyDemo</string>
+
     <string name="coordinator_demo">二阶贝塞尔曲线实现添加购物车动画</string>
+
     <string name="http_demo">OKHttp封装</string>
-    <string name="notification_demo">Notification通知Demo</string>
-    <string name="kotlin_demo">Kotlin Demo</string>
     <string name="http_demo_start">开始模拟请求</string>
+
+    <string name="notification_demo">Notification通知Demo</string>
     <string name="send_notification">发送通知</string>
+
+    <string name="kotlin_demo">Kotlin Demo</string>
+
+    <string name="aidl_client">aidl client</string>
+    <string name="connect_aidl_service">链接远程AIDL服务</string>
+    <string name="add_dog">向远程服务添加对象</string>
 </resources>

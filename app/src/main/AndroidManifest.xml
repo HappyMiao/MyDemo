@@ -33,6 +33,9 @@
         <!--KotlinDemoActivity Demo界面-->
         <activity android:name=".kotlin.KotlinDemoActivity"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar"/>
+        <!--AIDL Client Demo界面-->
+        <activity android:name=".aidlclient.AIDLClientActivity"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar"/>
     </application>
 
 </manifest>

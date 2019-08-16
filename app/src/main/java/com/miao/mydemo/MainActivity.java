@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
+import com.miao.mydemo.aidlclient.AIDLClientActivity;
 import com.miao.mydemo.coordinatorlayout.CoordinatorLayoutDemoActivity;
 import com.miao.mydemo.httprequest.HttpTestActivity;
 import com.miao.mydemo.kotlin.KotlinDemoActivity;
@@ -21,10 +22,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         Button btn2 = findViewById(R.id.button2);
         Button btn3 = findViewById(R.id.button3);
         Button btn4 = findViewById(R.id.button4);
+        Button btn5 = findViewById(R.id.button5);
         btn1.setOnClickListener(this);
         btn2.setOnClickListener(this);
         btn3.setOnClickListener(this);
         btn4.setOnClickListener(this);
+        btn5.setOnClickListener(this);
     }
 
     @Override
@@ -41,6 +44,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
             case R.id.button4:
                 startActivity(new Intent(this, KotlinDemoActivity.class));
+                break;
+            case R.id.button5:
+                startActivity(new Intent(this, AIDLClientActivity.class));
                 break;
         }
     }
